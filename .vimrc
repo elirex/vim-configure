@@ -25,9 +25,15 @@ set hlsearch " open hightlight search
 set incsearch
 set laststatus=2 " always show the statusline
 set showtabline=2 " always show the tab
+set foldenable " enable code fold
 set foldmethod=syntax "auto fold according to filetype
+setlocal foldlevel=1 " set fold level
+set foldlevelstart=99 " open file default not fold
 " set path+=/usr/shar/glib-2.0/
 " set path+=/usr/include/c++/4.6.3/
+
+" No auto comment
+autocmd FileType * setlocal formatoptions-=r
 
 " set color scheme
 colorscheme desertEx
@@ -62,16 +68,17 @@ let g:Powerline_dividers_override=['>>', '>', '<<', '<']
 let g:Powerline_mode_n = '  N  '
 let g:Powerline_mode_i = '  I  '
 
-" Auto resize focused window
-let &winheight = &lines * 7 / 10
+" resize focused windoiw
+nmap <F2> :let &winheight = &lines * 7 / 10<CR>
 
 "NERDTree set
 nmap<F6> :NERDTree<CR>
 "let NERDTreeIgnore=['/.vim$','/~$'] " No show file type
-let NERDTreeShowHidden=0    " No show hide file
+let NERDTreeShowHidden=1 " show hide file
 let NERDTreeSortOrder=['//$','/.cpp$','/.c$','/.h$', '*'] " Sort
 let NERDTreeCaseSensitiveSort=0
 let NERDTreeWinSize=30
 let NERDTreeShowBookmarks=1
 let NERDTreeQuitOnOpen=1
 let NERDTreeHighlightCursorline=1
+
