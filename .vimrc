@@ -53,6 +53,9 @@ else
 	set autoindent " always set autoindenting
 endif
 
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+
+
 " select ALL
 map <C-A> ggVG
 " map ctrl+c and crtl+v
