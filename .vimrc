@@ -36,7 +36,9 @@ set foldlevelstart=99 " open file default not fold
 autocmd FileType * setlocal formatoptions-=r
 
 " set color scheme
-colorscheme desertEx
+" colorscheme desertEx
+" colorscheme monokai
+colorscheme molokai
 
 " set indent
 if has("automd")
