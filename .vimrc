@@ -37,8 +37,8 @@ autocmd FileType * setlocal formatoptions-=r
 
 " set color scheme
 " colorscheme desertEx
-" colorscheme monokai
-colorscheme molokai
+colorscheme monokai
+" colorscheme molokai
 
 " set indent
 if has("automd")
