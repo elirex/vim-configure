@@ -59,10 +59,10 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 
 
 " select ALL
-map <C-A> ggVG
+" map <C-A> ggVG
 " map ctrl+c and crtl+v
-noremap <C-c> y
-noremap <C-v> P
+" noremap <C-c> y
+" noremap <C-v> P
 
 
 " Powerline
@@ -86,4 +86,11 @@ let NERDTreeWinSize=30
 let NERDTreeShowBookmarks=1
 let NERDTreeQuitOnOpen=1
 let NERDTreeHighlightCursorline=1
+
+" Complete the parentheses
+inoremap ( ()<LEFT>
+inoremap { {}<LEFT>
+inoremap [ []<LEFT>
+inoremap ' ''<LEFT>
+inoremap " ""<LEFT>
 
