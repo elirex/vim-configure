@@ -1,4 +1,5 @@
-# Vim Configure
+Vim Configure
+============
 
 ![image](https://elirex.github.io/repo/Vim-Configure/vim.png)
 
@@ -21,5 +22,7 @@ $ ln -s ~/.vim/.vimrc ~/.vimrc
 - [vim-powerline](https://github.com/Lokaltog/vim-powerline) - Provide the pretty vim screen.
 - [snipmate](https://github.com/msanders/snipmate.vim) - Provide some autocomplete.
 - [xterm-color-table](https://github.com/guns/xterm-color-table.vim) - show the xterm color table.
+- [vim-instant-markdown](https://github.com/suan/vim-instant-markdown) - Let you instant preview markdown files and don't need leave the editor.
+- [vim-markdown](https://github.com/tpope/vim-markdown) - Enhanced markdown file syntax and let `<anything>.md` files become markdown file type.
 
 These plugins are not original, I make some change to meet my needs.

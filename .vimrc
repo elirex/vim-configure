@@ -35,6 +35,9 @@ set foldlevelstart=99 " open file default not fold
 " No auto comment
 autocmd FileType * setlocal formatoptions-=r
 
+" vim-markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
 " set color scheme
 " colorscheme desertEx
 colorscheme monokai
