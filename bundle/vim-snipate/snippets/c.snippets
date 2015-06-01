@@ -41,8 +41,12 @@ snippet once
 	#endif /* end of include guard: $1 */
 # If Condition
 snippet if
-	if (${1:/* condition */}) {
+	if(${1:/* condition */}) {
 		${2:/* code */}
+	}
+snippet elf
+	else if(${1:/* condition */}) {
+		${2:/& code */}
 	}
 snippet el
  	else {
@@ -55,7 +59,7 @@ snippet t
 snippet do
  	do {
 		${2:/* code */}
-	}while(${1:/* condition */});
+	} while(${1:/* condition */});
 # While Loop
 snippet wh
  	while(${1:/* condition */}) {
@@ -63,7 +67,7 @@ snippet wh
 	}
 # For Loop
 snippet for
-	for( ${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
+	for(${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
 		${4:/* code */}
 	}
 # Custom For Loop
@@ -73,8 +77,7 @@ snippet forr
 	}
 # Function
 snippet fun
-	${1:void} ${2:function_name}(${3})
-	{
+	${1:void} ${2:function_name}(${3}) {
 		${4:/* code */}
 	} 
 # Function Declaration
