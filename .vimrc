@@ -59,7 +59,10 @@ else
 	set autoindent " always set autoindenting
 endif
 
+autocmd BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType c set omnifunc=ccomplete#Complete
+autocmd FileType cpp set omnifunc=cppcomplete#CompleteCPP
 
 
 " select ALL
