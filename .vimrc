@@ -33,6 +33,8 @@ set colorcolumn=80 " sets the max lenght of line
 " set path+=/usr/shar/glib-2.0/
 " set path+=/usr/include/c++/4.6.3/
 
+
+
 " No auto comment
 autocmd FileType * setlocal formatoptions-=r
 
@@ -101,3 +103,13 @@ inoremap [ []<LEFT>
 inoremap ' ''<LEFT>
 inoremap " ""<LEFT>
 
+" Cursor configure
+if exists('$TMUX')
+	let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShap=1\x7\<Esc>\\"
+	let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShap=0\x7\<Esc>\\"
+else
+	let &t_SI = "\<Esc>]50;CursorShap=1\x7"
+	let &t_EI = "\<Esc>]50;CursorShap=0\x7"
+endif
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
