@@ -30,6 +30,7 @@ set foldmethod=syntax "auto fold according to filetype
 setlocal foldlevel=1 " set fold level
 set foldlevelstart=99 " open file default not fold
 set colorcolumn=80 " sets the max lenght of line
+set backspace=indent,eol,start
 " set path+=/usr/shar/glib-2.0/
 " set path+=/usr/include/c++/4.6.3/
 
