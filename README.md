@@ -11,6 +11,11 @@ You need to execute command the following:
 $ git clon https://github.com/elirex/vim-configure.git .vim
 $ ln -s ~/.vim/.vimrc ~/.vimrc
 ```
+or
+```shellscript
+$ git clon https://github.com/elirex/vim-configure.git .vim
+$ chmod +x ~/.vim/install
+$ 
 
 ## Plugin
 - [vim-fugitive](https://github.com/topoe/vim-figitive) - Provide the convenient of git operation.
@@ -24,5 +29,7 @@ $ ln -s ~/.vim/.vimrc ~/.vimrc
 - [xterm-color-table](https://github.com/guns/xterm-color-table.vim) - show the xterm color table.
 - [vim-instant-markdown](https://github.com/suan/vim-instant-markdown) - Let you instant preview markdown files and don't need leave the editor.
 - [vim-markdown](https://github.com/tpope/vim-markdown) - Enhanced markdown file syntax and let `<anything>.md` files become markdown file type.
+- [indentLine](https://github.com/Yggdroot/indentLine) - This plugin is used for displaying thin vertical lines at each indentation level.
+
 
 These plugins are not original, I make some change to meet my needs.

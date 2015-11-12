@@ -9,8 +9,14 @@ call pathogen#helptags()
 filetype plugin indent on
 
 " The vim base set
+
+" Highlight
+syntax enable " enable code highlight
+syntax on
+
+
+
 set t_Co=256 "let vim support 256 colors
-syntax on " in mac os system 'syntax' must set on
 set fileencodings=utf-8,gbk,big5
 set fileencoding=utf-8
 set encoding=utf-8
@@ -19,6 +25,7 @@ set guifont=Monaco:h14 " set gui vim font
 set nobackup
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
 set nocompatible " disable vi-compatibility
 set vb t_vb= " No sound when enter error command
 set hlsearch " open hightlight search
@@ -29,6 +36,7 @@ set foldenable " enable code fold
 set foldmethod=syntax "auto fold according to filetype
 setlocal foldlevel=1 " set fold level
 set foldlevelstart=99 " open file default not fold
+set expandtab
 set colorcolumn=80 " sets the max lenght of line
 set backspace=indent,eol,start
 " set path+=/usr/shar/glib-2.0/
@@ -114,3 +122,4 @@ else
 endif
 autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul
+
