@@ -123,3 +123,5 @@ endif
 autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul
 
+" intendLine Setting
+let g:indentLine_char = '|'
