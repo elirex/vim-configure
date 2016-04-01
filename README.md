@@ -15,7 +15,8 @@ or
 ```shellscript
 $ git clon https://github.com/elirex/vim-configure.git .vim
 $ chmod +x ~/.vim/install
-$ 
+$
+```
 
 ## Plugin
 - [vim-fugitive](https://github.com/topoe/vim-figitive) - Provide the convenient of git operation.
@@ -30,6 +31,7 @@ $
 - [vim-instant-markdown](https://github.com/suan/vim-instant-markdown) - Let you instant preview markdown files and don't need leave the editor.
 - [vim-markdown](https://github.com/tpope/vim-markdown) - Enhanced markdown file syntax and let `<anything>.md` files become markdown file type.
 - [indentLine](https://github.com/Yggdroot/indentLine) - This plugin is used for displaying thin vertical lines at each indentation level.
+- [YouCompleteMe](https://github.com/Valloric/YouCompleteMe#python-semantic-completion) - YouCompleteMe is powerful code complete plugin.
 
 
 These plugins are not original, I make some change to meet my needs.
