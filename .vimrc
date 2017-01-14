@@ -126,6 +126,12 @@ autocmd InsertLeave * set nocul
 " intendLine Setting
 let g:indentLine_char = '|'
 
+" Trigger configuration.
+let g:UltiSnipsExpandTrigger="<F4>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+
 " ---------------------------- 
 " Configure YouCompleteMe 
 " ---------------------------- 
