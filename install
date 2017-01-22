@@ -1,2 +1,2 @@
-#!/bin/sh
-ln -s ~/.vim/.vimrc ~/.vimrc
+#!/usr/bin/env bash
+ln -s ~/.vim/vimrc ~/.vimrc
