@@ -8,14 +8,19 @@ Vim Configure
 You need to execute command the following:
 
 ```shellscript
-$ git clon https://github.com/elirex/vim-configure.git .vim
+$ git clone https://github.com/elirex/vim-configure.git .vim
 $ ln -s ~/.vim/.vimrc ~/.vimrc
 ```
 or
 ```shellscript
-$ git clon https://github.com/elirex/vim-configure.git .vim
+$ git clone https://github.com/elirex/vim-configure.git .vim
 $ chmod +x ~/.vim/install
-$
+```
+## Compiling YCM
+Note: Make sure you have CMake and Python headers installed.
+```
+$ cd ~/.vim/bundle/YouCompleteMe
+$ ./install.py --clang-completer
 ```
 
 ## Plugin
