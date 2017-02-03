@@ -2,6 +2,9 @@
 " Author Elirex
 " Date 2013/11/29
 
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 
 " auto load all plugins in vim bundle
 execute pathogen#infect()
@@ -84,12 +87,12 @@ autocmd FileType cpp set omnifunc=cppcomplete#CompleteCPP
 
 
 " Powerline
-let g:Powerline_symbols='fancy'
+" "let g:Powerline_symbols='fancy'
 "let g:Powerline_theme='solarized256' 
-let g:Powerline_colorscheme='solarized256'
-let g:Powerline_dividers_override=['>>', '>', '<<', '<']
-let g:Powerline_mode_n = '  N  '
-let g:Powerline_mode_i = '  I  '
+" "let g:Powerline_colorscheme='solarized256'
+" "let g:Powerline_dividers_override=['>>', '>', '<<', '<']
+" "let g:Powerline_mode_n = '  N  '
+" "let g:Powerline_mode_i = '  I  '
 
 " resize focused windoiw
 nmap <F2> :let &winheight = &lines * 7 / 10<CR>
