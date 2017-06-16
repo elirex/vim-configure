@@ -27,9 +27,16 @@ endfunction
 if exists( "g:loaded_youcompleteme" )
   call s:restore_cpo()
   finish
-elseif v:version < 704 || (v:version == 704 && !has('patch143'))
+elseif v:version < 704 || (v:version == 704 && !has( 'patch1578' ))
   echohl WarningMsg |
-        \ echomsg "YouCompleteMe unavailable: requires Vim 7.4.143+" |
+        \ echomsg "YouCompleteMe unavailable: requires Vim 7.4.1578+" |
+        \ echohl None
+  call s:restore_cpo()
+  finish
+elseif !has( 'timers' )
+  echohl WarningMsg |
+        \ echomsg "YouCompleteMe unavailable: requires Vim compiled with " .
+        \ "the timers feature" |
         \ echohl None
   call s:restore_cpo()
   finish
@@ -49,9 +56,6 @@ let g:loaded_youcompleteme = 1
 " already exist; thus, the user can override the defaults.
 " The only defaults that are here are the ones that are only relevant to the YCM
 " Vim client and not the ycmd server.
-
-let g:ycm_allow_changing_updatetime =
-      \ get( g:, 'ycm_allow_changing_updatetime', 1 )
 
 let g:ycm_open_loclist_on_ycm_diags =
       \ get( g:, 'ycm_open_loclist_on_ycm_diags', 1 )
@@ -80,11 +84,13 @@ let g:ycm_key_detailed_diagnostics =
 let g:ycm_cache_omnifunc =
       \ get( g:, 'ycm_cache_omnifunc', 1 )
 
-let g:ycm_server_log_level =
-      \ get( g:, 'ycm_server_log_level', 'info' )
+let g:ycm_log_level =
+      \ get( g:, 'ycm_log_level',
+      \ get( g:, 'ycm_server_log_level', 'info' ) )
 
-let g:ycm_server_keep_logfiles =
-      \ get( g:, 'ycm_server_keep_logfiles', 0 )
+let g:ycm_keep_logfiles =
+      \ get( g:, 'ycm_keep_logfiles',
+      \ get( g:, 'ycm_server_keep_logfiles', 0 ) )
 
 let g:ycm_extra_conf_vim_data =
       \ get( g:, 'ycm_extra_conf_vim_data', [] )
@@ -94,8 +100,7 @@ let g:ycm_server_python_interpreter =
       \ get( g:, 'ycm_path_to_python_interpreter', '' ) )
 
 let g:ycm_show_diagnostics_ui =
-      \ get( g:, 'ycm_show_diagnostics_ui',
-      \ get( g:, 'ycm_register_as_syntastic_checker', 1 ) )
+      \ get( g:, 'ycm_show_diagnostics_ui', 1 )
 
 let g:ycm_enable_diagnostic_signs =
       \ get( g:, 'ycm_enable_diagnostic_signs',
@@ -127,14 +132,15 @@ let g:ycm_goto_buffer_command =
 let g:ycm_disable_for_files_larger_than_kb =
       \ get( g:, 'ycm_disable_for_files_larger_than_kb', 1000 )
 
-" On-demand loading. Let's use the autoload folder and not slow down vim's
-" startup procedure.
-if has( 'vim_starting' ) " loading at startup
+if has( 'vim_starting' ) " Loading at startup.
+  " We defer loading until after VimEnter to allow the gui to fork (see
+  " `:h gui-fork`) and avoid a deadlock situation, as explained here:
+  " https://github.com/Valloric/YouCompleteMe/pull/2473#issuecomment-267716136
   augroup youcompletemeStart
     autocmd!
     autocmd VimEnter * call youcompleteme#Enable()
   augroup END
-else " manual loading with :packadd
+else " Manual loading with :packadd.
   call youcompleteme#Enable()
 endif
 
