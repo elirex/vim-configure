@@ -25,6 +25,7 @@ set nobackup
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set expandtab
 set nocompatible " disable vi-compatibility
 set vb t_vb= " No sound when enter error command
 set hlsearch " open hightlight search
@@ -35,7 +36,6 @@ set foldenable " enable code fold
 set foldmethod=syntax "auto fold according to filetype
 setlocal foldlevel=1 " set fold level
 set foldlevelstart=99 " open file default not fold
-set expandtab
 set colorcolumn=80 " sets the max lenght of line
 set backspace=indent,eol,start
 " set path+=/usr/shar/glib-2.0/
