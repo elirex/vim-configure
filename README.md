@@ -9,7 +9,7 @@ You need to execute command the following:
 
 ```shellscript
 $ git clone https://github.com/elirex/vim-configure.git .vim
-$ ln -s ~/.vim/.vimrc ~/.vimrc
+$ ln -s ~/.vim/vimrc ~/.vimrc
 ```
 or
 ```shellscript
