@@ -139,6 +139,8 @@ let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags
 let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming languang's keyword
 let g:ycm_complete_in_comments = 1 " Completion in comments
 let g:ycm_complete_in_strings = 1 " Completion in strings
-let g:ycm_python_binary_path = '/usr/local/bin/python3'
-
+let g:ycm_python_binary_path = '/usr/local/bin/python3.7'
+let g:ycm_path_to_python_interpreter = '/usr/local/bin/python3.7'
+"let g:ycm_python_binary_path = '/Users/Sheng/anaconda3/bin/python'
+"let g:ycm_path_to_python_interpreter= '/Users/Sheng/anaconda3/bin/python'
 map <F3> : YcmCompleter GoTo<CR>
