@@ -8,12 +8,12 @@ Vim Configure
 You need to execute command the following:
 
 ```shellscript
-$ git clone https://github.com/elirex/vim-configure.git .vim
+$ git clone --recurse-submodules https://github.com/elirex/vim-configure.git .vim
 $ ln -s ~/.vim/vimrc ~/.vimrc
 ```
 or
 ```shellscript
-$ git clone https://github.com/elirex/vim-configure.git .vim
+$ git clone --recurse-submodules https://github.com/elirex/vim-configure.git .vim
 $ chmod +x ~/.vim/install
 ```
 ## Compiling YCM
