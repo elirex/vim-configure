@@ -13,8 +13,6 @@ filetype plugin indent on
 syntax enable " enable code highlight
 syntax on
 
-
-
 set t_Co=256 "let vim support 256 colors
 set fileencodings=utf-8,gbk,big5
 set fileencoding=utf-8
@@ -40,7 +38,6 @@ set colorcolumn=80 " sets the max lenght of line
 set backspace=indent,eol,start
 " set path+=/usr/shar/glib-2.0/
 " set path+=/usr/include/c++/4.6.3/
-
 
 
 " No auto comment
@@ -74,8 +71,6 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType cpp set omnifunc=cppcomplete#CompleteCPP
 
-
-
 " select ALL
 " map <C-A> ggVG
 " map ctrl+c and crtl+v
@@ -84,13 +79,17 @@ autocmd FileType cpp set omnifunc=cppcomplete#CompleteCPP
 
 
 " Powerline
-let g:Powerline_symbols='fancy'
-"let g:Powerline_theme='solarized256' 
-let g:Powerline_colorscheme='solarized256'
-let g:Powerline_dividers_override=['>>', '>', '<<', '<']
-let g:Powerline_mode_n = '  N  '
-let g:Powerline_mode_i = '  I  '
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
 
+
+" let g:Powerline_symbols='fancy'
+" let g:Powerline_theme='solarized256' 
+" let g:Powerline_colorscheme='solarized256'
+" let g:Powerline_dividers_override=['>>', '>', '<<', '<']
+" let g:Powerline_mode_n = '  N  '
+" let g:Powerline_mode_i = '  I  '
 " resize focused windoiw
 nmap <F2> :let &winheight = &lines * 7 / 10<CR>
 
