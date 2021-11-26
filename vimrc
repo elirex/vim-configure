@@ -8,7 +8,7 @@ Plug 'preservim/nerdtree'
 Plug 'Yggdroot/indentLine'
 
 " YouCompleteMe
-Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer'}
+Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --all'}
 
 call plug#end()
 
@@ -24,10 +24,13 @@ set number
 
 set ruler
 
+
 " Convert  tapb to space
 set tabstop=4
 set shiftwidth=4
-set softtabstop=4
+
+" When 'softtabstop' is negative, the value of 'shiftwidth' is used.
+set softtabstop=-1
 set expandtab
 
 " Set the max length of column
@@ -38,6 +41,17 @@ set laststatus=2
 
 " Set always show the tab
 set showtabline=2
+
+" Set display space as · and EOS as $ 
+set listchars+=space:·
+nmap <F3> :set invlist <CR>
+imap <F3> <ESC> :set invlist <CR> a
+
+" Set fold
+set foldmethod=syntax
+set foldlevelstart=20
+nmap <F4> za <CR>
+imap <F4> <ESC> za <CR> a
 
 " Powerline
 python3 from powerline.vim import setup as powerline_setup
@@ -51,7 +65,7 @@ colorscheme monokai
 set hlsearch 
 
 " NERDTree
-map <F2> :NERDTreeToggle<CR>
+nmap <F2> :NERDTreeToggle<CR>
 
 " YouCompleteMe 
 set completeopt=longest,menu
