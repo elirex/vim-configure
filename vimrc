@@ -10,6 +10,9 @@ Plug 'Yggdroot/indentLine'
 " YouCompleteMe
 Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --all'}
 
+" Powerline
+Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+
 call plug#end()
 
 " Enable code synctax
@@ -52,11 +55,6 @@ set foldmethod=syntax
 set foldlevelstart=20
 nmap <F4> za <CR>
 imap <F4> <ESC> za <CR> a
-
-" Powerline
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
 
 " Set color scheme
 colorscheme monokai

@@ -48,17 +48,16 @@ $ uninstall.sh
 
 ### Setup on Vim
 
-Add command to `.vimrc`, following:
+Execute the below command in VIM
 
 ```
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
+PlugInstall
 ```
 
 ## Plugin
 - [nerdtree](https://github.com/scrooloose/nerdtree) - Explore your filesystem, open files and directories.
 - [indentLine](https://github.com/Yggdroot/indentLine) - This plugin is used for displaying thin vertical lines at each indentation level.
 - [YouCompleteMe](https://github.com/Valloric/YouCompleteMe#python-semantic-completion) - YouCompleteMe is powerful code complete plugin.
+- [powerline](https://github.com/powerline/powerline) - This is a powerful statusline plugin.
 
 These plugins are not original, I make some change to meet my needs.
