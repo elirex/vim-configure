@@ -1,4 +1,4 @@
-" Specify a directory for plugins
+" Import plugins 
 call plug#begin('~/.vim/plugged')
 
 " NERDTREE
@@ -15,26 +15,54 @@ Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 call plug#end()
 
-" Enable code synctax
-syntax enable " enable code highlight
-syntax on
-
 " Set disable vi-cimpatibility
 set nocompatible 
+
+" Enable syntax 
+syntax on
+
+" Enable color scheme
+if !has('gui_running')
+    set t_Co=256
+endif
+colorscheme monokai
+
+" Enable mouse support
+set mouse=a
 
 " Enable line number
 set number
 
+" Highlight current line 
+set cursorline
+:highlight Cursorline cterm=bold ctermbg=black
+
+" Show the current cursor status on status bar 
 set ruler
 
+" Set hightlight search
+set hlsearch 
 
-" Convert  tapb to space
-set tabstop=4
-set shiftwidth=4
+" Enable smartcase search sensitivity
+set ignorecase
+set smartcase
 
-" When 'softtabstop' is negative, the value of 'shiftwidth' is used.
-set softtabstop=-1
+" Indentation using spaces
+" tabstop:      width of tab character
+" softtabstop:  fine tunes the amount of whitespace to be added
+" shiftwidth:   determines the amount of whitespace to add in normal mode
+" expandtab:    when on use space instead of tab
+" textwidth:    text wrap width
+" autoindent:   autoindent in new line
+set tabstop     =4
+set softtabstop =4
+set shiftwidth  =4
+set textwidth   =79
 set expandtab
+set autoindent
+
+" Show the matching part of pairs [], {} and ()
+set showmatch
 
 " Set the max length of column
 set colorcolumn=80 
@@ -56,12 +84,6 @@ set foldlevelstart=20
 nmap <F4> za <CR>
 imap <F4> <ESC> za <CR> a
 
-" Set color scheme
-colorscheme monokai
-
-" Set hightlight search
-set hlsearch 
-
 " NERDTree
 nmap <F2> :NERDTreeToggle<CR>
 
@@ -72,4 +94,11 @@ let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/.
 let g:ycm_key_invoke_completion='<c-z>'
 let g:ycm_collect_identifiers_from_tags_files=1
 let g:ycm_seed_identifiers_with_syntax=1
+
+
+" Remove trailing whitespace from Python files
+autocmd BufWritePre *.py :%s/\s\+$//e
+autocmd BufWritePre *.f90 :%s/\s\+$//e
+autocmd BufWritePre *.f95 :%s/\s\+$//e
+autocmd BufWritePre *.for :%s/\s\+$//e
 
