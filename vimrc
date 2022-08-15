@@ -35,9 +35,8 @@ set number
 
 " Highlight current line 
 set cursorline
-:highlight Cursorline cterm=bold ctermbg=black
 
-" Show the current cursor status on status bar 
+" Show the current cursor status on status bar
 set ruler
 
 " Set hightlight search
@@ -74,7 +73,7 @@ set laststatus=2
 set showtabline=2
 
 " Set display space as · and EOS as $ 
-set listchars+=space:·
+set listchars=space:·,tab:▸\ ,eol:↲
 nmap <F3> :set invlist <CR>
 imap <F3> <ESC> :set invlist <CR> a
 
